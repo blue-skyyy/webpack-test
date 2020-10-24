@@ -12,6 +12,6 @@
   \**********************/
 /*! unknown exports (runtime-defined) */
 /*! runtime requirements:  */
-eval("\n    let style = document.createElement('style');\n    style.innerHTML = '.name{color:red}'\n    document.head.appendChild(style);\n    document.body.innerHTML = `<div>\n  <h1>这是标题</h1>\n  <p class='name'>这是文本哈哈！</p>\n</div>`;\n;\n  \n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n    let style = document.createElement('style');\n    style.innerHTML = '.name{color:green}'\n    document.head.appendChild(style);\n    document.body.innerHTML = `<div>\n  <h1>这是标题</h1>\n  <p class='name'>这是文本哈哈！</p>\n</div>`;\n;\n  \n\n//# sourceURL=webpack:///./src/index.js?");
 /******/ })()
 ;

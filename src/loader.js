@@ -1,11 +1,20 @@
-// source为匹配文件的源码 返回为string类型
+const loaderUtils = require("loader-utils");
+// source为匹配文件的源码 返回为string/buffer类型
 module.exports = function (source) {
+  // 获取loader options配置项参数
+  let opt = loaderUtils.getOptions(this);
+  // 异步打包 延迟两秒去build
+  const callback = this.async();
+  console.log("opt", opt);
   let content = source.replace(/<p>/g, "<p class='name'>");
-  let s = `
+
+  setTimeout(() => {
+    let s = `
     let style = document.createElement('style');
-    style.innerHTML = '.name{color:red}'
+    style.innerHTML = '.name{color:green}'
     document.head.appendChild(style);
     document.body.innerHTML = ${content};
   `;
-  return s;
+    callback(null, s);
+  }, 2000);
 };
