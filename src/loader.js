@@ -5,7 +5,7 @@ module.exports = function (source) {
   let opt = loaderUtils.getOptions(this);
   // 异步打包 延迟两秒去build
   const callback = this.async();
-  console.log("opt", opt);
+  console.log("opt", typeof opt, opt); // object { from: "loader"}
   let content = source.replace(/<p>/g, "<p class='name'>");
 
   setTimeout(() => {

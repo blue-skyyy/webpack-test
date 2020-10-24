@@ -15,9 +15,15 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
+            loader: path.resolve("./src/loader1.js"),
+            options: {
+              from: "loader1"
+            }
+          },
+          {
             loader: path.resolve("./src/loader.js"),
             options: {
-              color: "hello"
+              from: "loader"
             }
           }
         ]
